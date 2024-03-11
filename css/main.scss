@@ -1,0 +1,302 @@
+@charset "utf-8";
+@import url('reset.css');
+@import url('main.scss');
+
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root {
+    --font-title : "Gentium Plus", serif;;
+    --font-basic : "Lato", 'Pretendard-Regular';
+    
+    --title-size : 4rem;
+    --medium-size : 18px;
+    --basic-size : 16px;
+
+    --margin-bottom : 20rem;
+}
+
+body {
+    font-family: var(--font-basic);
+    line-height: 1;
+    color: #333;
+}
+
+html, body {
+    font-size: 62.5%; /* 10px */
+    height: 1000px;
+}
+
+.inner {
+    max-width: 1600px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    height: 150px;
+    padding: 0 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    color: #fff;
+}
+
+header > div {
+    display: flex;
+    align-items: center;
+    column-gap: 70px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+main figure {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+main figure::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0.3085609243697479) 12%, rgba(0,0,0,0) 41%);
+}
+
+main figure::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.4);
+    animation: gradient 4s;
+    animation-fill-mode: forwards; /* 애니메이션 마지막 모습을 유지함 */
+}
+
+@keyframes gradient {
+    from {
+       opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+main figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+main figure .text {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+main figure .text h2 {
+    font-size: 7rem;
+    font-family: var(--font-title);
+    font-weight: 200;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    animation-duration: 2s;
+    animation-name: slideleft
+}
+
+@keyframes slideleft {
+    from {
+        transform: translate(100px, 0);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+main figure .text p {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+    animation-duration: 2s;
+    animation-name: slideright
+}
+
+@keyframes slideright {
+    from {
+        transform: translate(-100px, 0);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+main figure .prev_btn,
+main figure .next_btn {
+    position: absolute;
+    top: 50%;
+    color: #fff;
+    font-size: var(--medium-size);
+    letter-spacing: 1px;
+    z-index: 1;
+}
+
+main figure .prev_btn {
+    left: 14rem;
+}
+
+main figure .prev_btn::before,
+main figure .prev_btn::after {
+    content: "";
+    height: 1px;
+    position: absolute;
+    top: -1rem;
+}
+
+main figure .prev_btn::before {
+    width: 12rem;
+    left: -14rem;
+    background-color: rgba(255, 255, 255, .5);
+}
+
+main figure .prev_btn::after {
+    width: 8rem;
+    right: -19px;
+    background-color: rgba(255, 255, 255, 1);
+    transition: .5s;
+}
+
+main figure .prev_btn:hover::after {
+    width: 20rem;
+}
+
+main figure .next_btn {
+    right: 14rem;
+}
+
+main figure .next_btn::before,
+main figure .next_btn::after {
+    content: "";
+    height: 1px;
+    position: absolute;
+    top: -1rem;
+}
+
+main figure .next_btn::before {
+    width: 12rem;
+    right: -14rem;
+    background-color: rgba(255, 255, 255, .5);
+}
+
+main figure .next_btn::after {
+    width: 8rem;
+    left: -19px;
+    background-color: rgba(255, 255, 255, 1);
+    transition: .5s;
+}
+
+main figure .next_btn:hover::after {
+    width: 20rem;
+}
+
+nav {
+    position: fixed;
+    top: 150px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    color: #333;
+    padding-top: 9rem;
+    display: none;
+}
+
+nav .inner {
+    display: flex;
+}
+
+nav .inner figure {
+    min-width: 300px;
+    width: 33.65%;
+    min-height: 180px;
+    height: 17.91vw;
+    margin-top: 7rem;
+    margin-right: 14.06vw;
+}
+
+nav .inner figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+nav .inner > ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 800px;
+}
+
+nav .inner > ul > li {
+    width: 19.79vw;
+    margin-bottom: 6rem;
+}
+
+nav .inner ul > li > a {
+    font-family: var(--font-title);
+    font-size: var(--title-size);
+    margin-bottom: 2rem;
+    display: block;
+}
+
+nav .inner ul > li > ul li a {
+    font-family: var(--font-basic);
+    font-size: var(--medium-size);
+}
+
+nav .info {
+    position: fixed;
+    bottom: 3rem;
+    right: 7rem;
+    display: flex;
+    align-items: center;
+    column-gap: 5rem;
+    font-size: var(--basic-size);
+    color: #858585;
+}
+
+nav .info .text {
+    display: flex;
+    column-gap: 4rem;
+}
+
+nav .info .sns {
+    display: flex;
+    column-gap: 3rem;
+}
+
+nav .info .sns img {
+    filter: invert();
+    opacity: .5;
+}
