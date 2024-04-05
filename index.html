@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>더무빙 카라반</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/main.scss">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="lib/jquery-3.7.1.min.js"></script>
     <script src="js/main.js"></script>
 </head>
@@ -103,21 +105,38 @@
 
         </header><!-- .header end -->
 
+
         <main class="main_visual">
             <figure>
-                <img src="img/메인_바다.png" alt="바다배경">
-                <img src="img/메인5 (2) 2.png" alt="바다배경">
-                <img src="img/a.png" alt="바다배경">
-                <img src="img/메인_카라반글램핑.png" alt="바다배경">
-                <img src="img/메인8 (1) 1.png" alt="바다배경">
+                <div class="imageWrap">
+                    <img src="img/메인_바다.png" alt="바다배경">
+                </div>
+                <div class="imageWrap">
+                    <img src="img/메인8 (1) 1.png" alt="오두막">
+                </div>
+                <div class="imageWrap">
+                    <img src="img/메인5 (2) 2.png" alt="바다배경">
+                </div>
+                <div class="imageWrap">
+                    <img src="img/a.png" alt="바다배경">
+                </div>
+                <div class="imageWrap">
+                    <img src="img/메인_카라반글램핑.png" alt="바다배경">
+                </div>
+
                 <div class="text">
                     <h2>THE MOVING</h2>
                     <p>Emotional caravan camping at sea</p>
+                    <div class="reservation">
+                        <a href="#">RESERVATION</a>
+                    </div><!-- .reservation end -->
                 </div><!-- .text end -->
+
                 <button class="prev_btn">Prev</button>
                 <button class="next_btn">Next</button>
             </figure>
         </main><!-- .main_visual end -->
+
 
         <section class="story">
             <div class="inner">
@@ -129,11 +148,15 @@
                         <p>눈을 감고 사랑하는 사람과 여행을 떠나는 상상을 해봅니다.<br />
                             캠핑카를 타고 우리는 어디서든 여행을 즐길 수 있습니다.<br />
                             한참을 달려 바다가 훤히 내려다 보이는 소나무 숲에 도착하였습니다.<br />
-                            나무 사이로 내려다 보이는 작은 해변, 하얀 모래, 파도 소리 모든 것이 완벽합니다.</p>
+                            나무 사이로 내려다 보이는 작은 해변, 하얀 모래, 파도 소리 모든 것이 <br />
+                            완벽합니다.</p>
                     </div><!-- .text end -->
                     <figure>
                         <img src="img/메인_자동차.png" alt="자동차배경">
                     </figure>
+                    <div class="view_more">
+                        <a href="#">VIRE MORE</a>
+                    </div><!-- .view_more end -->
                 </div>
 
                 <div class="box box2" data-aos="fade-left" data-aos-offset="300" data-aos-duration="1000"
@@ -150,7 +173,7 @@
                                 각종 편의시설이 갖춰진 “바다에서 즐기는 감성 카라반 캠핑” 이라는 차별화된 글램핑 리조트입니다</p>
                         </div><!-- .text end -->
                         <div class="view_more">
-                            <a href="#">VIRE MORE</a>
+                            <a href="#">예약하기</a>
                         </div><!-- .view_more end -->
                     </div>
                 </div>
@@ -182,7 +205,7 @@
                         외부 글램핑텐트에서 바베큐를 즐길 수 있는<br />
                         감성 글램핑입니다.
                     </p>
-                    <p>‘감성스테이’는 더무빙에서 2022년부터<br /> 
+                    <p>‘감성스테이’는 더무빙에서 2022년부터<br />
                         새롭게 선보이는 오션뷰 감성공간이며<br />
                         반려동물동반이 가능 합니다.
                     </p>
@@ -223,7 +246,48 @@
         <div class="special_offers">
             <h4>Special Offers</h4>
             <p>더무빙만의 스페셜 오퍼를 통해 색다른 글램핑을 경험하세요.</p>
-            <ul>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a>
+                            <img src="img/커피.png" alt="커피">
+                        </a>
+                        <h5>Special 01 : 웨이브온 커피</h5>
+                    </div>
+                    <div class="swiper-slide">
+                        <a>
+                            <img src="img/어묵꼬치세트.png" alt="어묵꼬치세트">
+                        </a>
+                        <h5>Special 02 : 꼬치 어묵탕 세트</h5>
+                    </div>
+                    <div class="swiper-slide">
+                        <a>
+                            <img src="img/스모어세트.png" alt="스모어세트">
+                        </a>
+                        <h5>Special 03 : 머쉬멜로우 스모어세트</h5>
+                    </div>
+                    <div class="swiper-slide">
+                        <a>
+                            <img src="img/조식.jpg" alt="솥밥조식">
+                        </a>
+                        <h5>Special 04 : 더무빙 솥밥조식</h5>
+                    </div>
+                    <div class="swiper-slide">
+                        <a>
+                            <img src="img/메인6.png" alt="커피">
+                        </a>
+                        <h5>Special 05 : 더무빙 BBQ 세트</h5>
+                    </div>
+                    <div class="swiper-slide">
+                        <a>
+                            <img src="img/수영장.jpg" alt="수영장">
+                        </a>
+                        <h5>Special 06 : 무료 수영장</h5>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <!-- <ul>
                 <li>
                     <a href="#">
                         <figure>
@@ -272,7 +336,7 @@
                     </a>
                     <h6>Special 06 : 무료 수영장</h6>
                 </li>
-            </ul>
+            </ul> -->
         </div><!-- .special_offers end -->
 
         <div class="contact_us">
@@ -291,40 +355,68 @@
 
         <footer class="footer" id="footer">
             <div class="inner">
-                    <div>
-                        <div class="footer_logo">
-                            <img src="img/로고.png" alt="더무빙 로고">
-                        </div><!-- .footer_logo end -->
-                        <div class="sns">
-                            <a>
-                                <img src="img/인스타그램.png" alt="인스타그램">
-                            </a>
-                            <a>
-                                <img src="img/카카오톡.png" alt="카카오톡">
-                            </a>
-                        </div><!-- .sns end -->
-                    </div>
-                    <div class="footer_info">
-                        <span>입금 은행명 : 농협은행</span>
-                        <span>계좌번호 : 355-0044-4803-13</span>
-                        <span>예금주 : 애니원부킹</span>
-                        <span>상호명 : 더무빙</span>
-                        <span>사업자등록번호 : 705-05-00153</span>
-                        <span>대표자명 : 허범준</span>
-                        <span>T : 1577-8446</span>
-                        <span>E : tj-bumjun@hanmail.net</span>
-                    </div><!-- .footer_info end -->
-                    <div class="copyright">
-                        Copyright(c) 2017 by 더무빙 All Rights Reserved. Designed by 애니원부킹 
-                    </div><!-- .copyright end -->
-                
+                <div>
+                    <div class="footer_logo">
+                        <img src="img/로고.png" alt="더무빙 로고">
+                    </div><!-- .footer_logo end -->
+                    <div class="sns">
+                        <a>
+                            <img src="img/인스타그램.png" alt="인스타그램">
+                        </a>
+                        <a>
+                            <img src="img/카카오톡.png" alt="카카오톡">
+                        </a>
+                    </div><!-- .sns end -->
+                </div>
+                <div class="footer_info">
+                    <span>입금 은행명 : 농협은행</span>
+                    <span>계좌번호 : 355-0044-4803-13</span>
+                    <span>예금주 : 애니원부킹</span>
+                    <span>상호명 : 더무빙</span>
+                    <span>사업자등록번호 : 705-05-00153</span>
+                    <span>대표자명 : 허범준</span>
+                    <span>T : 1577-8446</span>
+                    <span>E : tj-bumjun@hanmail.net</span>
+                </div><!-- .footer_info end -->
+                <div class="copyright">
+                    Copyright(c) 2024 by 더무빙 All Rights Reserved.<br />Designed by 김유진
+                </div><!-- .copyright end -->
+
             </div><!-- .inner end -->
         </footer><!-- .footer end -->
 
         <button class="to_top">
-            <!-- <img src="img/화살표.png" alt="화살표"> -->
+            <img src="img/화살표.png" alt="화살표">
         </button><!-- .to_top end -->
     </div><!-- #wrap end -->
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+
+            slidesPerView: 3.2,
+            spaceBetween: 20,
+            autoplay: {
+                delay: 3500,
+            },
+            speed: 1000,
+            loop: true,
+            breakpoints: {
+                // 화면의 넓이가 320px 이상일 때
+                320: {
+                    slidesPerView: 1,
+                    centeredSlides: true,
+                },
+                1024: {
+                    slidesPerView: 3.2,
+                    spaceBetween: 20
+                },
+                1440: {
+                    slidesPerView: 3.2,
+                    spaceBetween: 20
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>

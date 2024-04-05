@@ -1,4 +1,26 @@
 $(function () {
+    let logo = $('header .logo img');
+    let menu = $('header .menu_open img');
+
+    // 화면 크기가 480이하일 때 로고와 메뉴 버튼 사이즈 변경
+    if($(window).width() < 481){
+        logo.attr('src', 'img/로고_m.png');
+        menu.attr('src', 'img/menu_m.png');
+    } else {
+        logo.attr('src', 'img/로고.png');
+        menu.attr('src', 'img/menu.png');
+    };
+
+    $(window).resize(function(){
+        if($(window).width() < 481){
+            logo.attr('src', 'img/로고_m.png');
+            menu.attr('src', 'img/menu_m.png');
+        } else {
+            logo.attr('src', 'img/로고.png');
+            menu.attr('src', 'img/menu.png');
+        };
+    });
+
     let header = $('header');
     let menuOpen = $('header .menu_open');
     let nav = $('header nav');
@@ -23,32 +45,47 @@ $(function () {
             header.addClass('on');
         } else if (header.css('height') === '150px' && $('header > div a').css('color') === 'rgb(51, 51, 51)') {
             header.removeClass('on');
-        } else if (header.css('height') === '100px') {
+        } else if (header.css('height') === '100px' && header.hasClass("on") === true && window.scrollY < 100) {
+            header.removeClass('on');
+        } else if (header.css('height') === '100px' && header.hasClass("on") === true) {
+            header.addClass('on');
+        } else {
             header.addClass('on');
         }
         header.toggleClass('menuOpen');
         nav.toggleClass('menuOpen');
-        body.toggleClass('on');
+        body.toggleClass('on'); //메뉴 열었을 때 스크롤 막기
+    })
+
+    let menuList = $('nav .inner > ul > li');
+    let menuImage = $('nav .inner figure img');
+    let menuImageWrap = ['img/수영장.jpg', 'img/메인6.png','img/메인8 (1) 1.png' ,'img/a.png', 'img/메인11.png', 'img/메인_바다.png'];
+
+    // 메뉴 리스트에 마우스 호버 시, 메뉴 이미지 변경
+    menuList.mouseenter(function(){
+        let current = $(this).index()
+        menuImage.attr('src', menuImageWrap[current]);
     })
 
     let nextBtn = $('main figure .next_btn');
     let prevBtn = $('main figure .prev_btn');
-    let mainImage = $('main figure img');
+    let mainImage = $('main figure .imageWrap'); /*  */
 
     let totalSlides = mainImage.length;
     let current = 0;
 
+    // 메인슬라이드 버튼 클릭 시, 이미지 변경
     nextBtn.click(function () {
         let nextIndex = (current + 1) % totalSlides;
-        mainImage.eq(current).fadeOut(800);
-        mainImage.eq(nextIndex).fadeIn(800);
+        mainImage.eq(current).fadeOut(1400);
+        mainImage.eq(nextIndex).fadeIn(1600);
         current = nextIndex;
     });
 
     prevBtn.click(function () {
         let prevIndex = (current - 1) % totalSlides;
-        mainImage.eq(current).fadeOut(800);
-        mainImage.eq(prevIndex).fadeIn(800);
+        mainImage.eq(current).fadeOut(1400);
+        mainImage.eq(prevIndex).fadeIn(1600);
         current = prevIndex;
     });
 
